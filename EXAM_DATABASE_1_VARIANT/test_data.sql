@@ -1,13 +1,13 @@
 USE UniversityDB;
 
--- 1. Преподаватели (3)
+-- 1. Преподаватели
 INSERT IGNORE INTO Teachers (first_name, last_name, middle_name, birth_date, email, phone, hire_date)
 VALUES 
 ('Иван', 'Петров', 'Сергеевич', '1980-05-12', 'petrov@example.com', '+79991234567', '2015-09-01'),
 ('Анна', 'Сидорова', 'Ивановна', '1985-03-20', 'sidorova@example.com', '+79997654321', '2018-02-15'),
 ('Михаил', 'Кузнецов', 'Алексеевич', '1975-11-08', 'kuznetsov@example.com', '+79991112233', '2010-01-10');
 
--- 2. Предметы (4)
+-- 2. Предметы 
 INSERT IGNORE INTO Subjects (subject_name, is_math_related)
 VALUES 
 ('Математика', TRUE),
@@ -15,7 +15,7 @@ VALUES
 ('Русский язык', FALSE),
 ('История', FALSE);
 
--- 3. Курсы (6, включая прошлогодний)
+-- 3. Курсы
 INSERT IGNORE INTO Courses (subject_id, teacher_id, academic_year, semester)
 VALUES 
 (1, 1, '2024-2025', 1),  -- 1: Математика Петров
@@ -25,7 +25,7 @@ VALUES
 (1, 2, '2024-2025', 2),  -- 5: Математика Сидорова
 (3, 2, '2023-2024', 2);  -- 6: Русский Сидорова в прошлом году
 
--- 4. Студенты (3)
+-- 4. Студенты
 INSERT IGNORE INTO Students (first_name, last_name, middle_name, birth_date, email, phone, enrollment_date, group_name)
 VALUES 
 ('Алексей', 'Смирнов', 'Викторович', '2002-07-14', 'smirnov@example.com', '+79995556677', '2023-09-01', 'ИТ-23'),
@@ -39,7 +39,7 @@ VALUES
 (2, 1), (2, 3), (2, 5),                 -- Васильева
 (3, 1), (3, 2), (3, 4);                 -- Орлов
 
--- 6. Оценки (с прошлогодней для динамики)
+-- 6. Оценки
 INSERT IGNORE INTO Grades (student_id, course_id, teacher_id, grade, grade_date)
 VALUES 
 (1, 1, 1, 5, '2025-01-15'),  -- Мат. Петров
